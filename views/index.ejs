@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<body>
+    <div class="container">
+        <h2>My Fun Todo List App</h2>
+        <form action="/addtask" method="post">
+            <input type="text" name="newtask" placeholder="what does need to do?">
+            <button>Add</button>
+        <h2>Added Task</h2>
+        <% for(let i = 0; i < task.length; i++){%>
+            <li><input type="checkbox" name="check" value ="<%= task[i] %>"> <%=task[i]%></li>
+        <%} %>
+        <button formaction="/deletetask" type="submit">Delete</button>
+        </form>
+        <h2>Done Task</h2>
+        <% for(let i=0; i < complete.length; i++){
+            %> <li> <input type="checkbox" checked> <%= complete[i] %></li> <%
+        } %>
+    </div>
+
+</body>
+</html>
